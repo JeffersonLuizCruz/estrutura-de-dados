@@ -6,12 +6,16 @@ public class VetorApplication{
 		
 		Vetor vetor = new Vetor(10);
 		
-		vetor.adicionar("Elemento 1");
-		vetor.adicionar("Elemento 2");
-		vetor.adicionar("Elemento 3");
-		vetor.adicionar("Elemento 4");
+		vetor.adicionar("B");
+		vetor.adicionar("C");
+		vetor.adicionar("D");
+		vetor.adicionar("E");
+		vetor.adicionar("X");
 		
-		System.out.println(vetor.buscar("Elemento 5"));
+		System.out.println(vetor);
+		
+		vetor.adicionar(3, "Y");
+		System.out.println(vetor);
 
 	}
 

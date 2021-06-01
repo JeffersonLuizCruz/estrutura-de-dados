@@ -36,7 +36,7 @@ public class Vetor {
 //	}
 	
 	public String buscar(int posicao) {
-		if((posicao >= 0 && posicao < this.tamanho)) {
+		if(!(posicao >= 0 && posicao < this.tamanho)) {
 			throw new IllegalArgumentException("Posição Inválida!");
 		}
 		return this.elementos[posicao];
@@ -60,6 +60,20 @@ public class Vetor {
 			return true;
 		}
 		return false;
+	}
+	
+	//Adicionar um elemento em determinada posiçãoa do array
+	public boolean adicionar(int posicao, String nome){
+		aumentarCapacidade();
+        if (!(posicao >= 0 && posicao < this.tamanho)) {
+            throw new IllegalArgumentException("Comando Inválido!");
+        }
+             for(int i = this.tamanho-1; i >= posicao; i--) {
+                 this.elementos[i+1] = this.elementos[i];
+             }
+            this.elementos[posicao] = nome;
+            this.tamanho++;
+        return true;
 	}
 	
 	public void aumentarCapacidade() {
