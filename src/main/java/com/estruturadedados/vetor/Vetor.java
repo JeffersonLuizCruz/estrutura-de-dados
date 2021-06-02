@@ -76,6 +76,16 @@ public class Vetor {
         return true;
 	}
 	
+	public void remover(int posicao) {
+        if (!(posicao >= 0 && posicao < this.tamanho)) {
+            throw new IllegalArgumentException("Comando Inválido!");
+        }
+        for(int i = posicao; i < this.tamanho; i++) {
+        	this.elementos[i] = this.elementos[i +1];
+        }
+		this.tamanho--;
+	}
+	
 	public void aumentarCapacidade() {
 		if(this.tamanho == this.elementos.length) {
 			String[] elementosNovos = new String[elementos.length * 2];
