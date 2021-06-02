@@ -14,7 +14,7 @@ public class VetorApplication{
 		Contato c3 = new Contato("Luiz", "1234-3333", "luiz1@gmail.com");
 		Contato c4 = new Contato("Cruz", "1234-4444", "cruz1@gmail.com");
 		
-		VetorObject vetor = new VetorObject(7);
+		Lista<Contato> vetor = new Lista<>(5);
 		
 		vetor.adicionar(c1);
 		vetor.adicionar(c2);
