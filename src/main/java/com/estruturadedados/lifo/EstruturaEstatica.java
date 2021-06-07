@@ -1,30 +1,26 @@
-package com.estruturadedados.vetor;
+package com.estruturadedados.lifo;
 
-public class Lista<T> {
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@Data
+public class EstruturaEstatica<T> {
 
 	private T[] elementos;
 	private int tamanho;
 
-	public Lista(int capacidade) {
+	public EstruturaEstatica(int capacidade) {
 		this.elementos = (T[]) new Object[capacidade];
 		this.tamanho = 0;
-	}
-
-	public Object buscar(int posicao) {
-		if(!(posicao >= 0 && posicao < this.tamanho)) {
-			throw new IllegalArgumentException("Posição Inválida!");
-		}
-		return this.elementos[posicao];
 	}
 
 	public boolean buscar(T elemento) {
 		for(int i = 0; i < this.tamanho; i++) {
 			if(this.elementos[i].equals(elemento))
 				return true;
-			//return i;
 		}
 		return false;
-		//return -1;
 	}
 
 	public boolean adicionar(T elemento) {
@@ -37,7 +33,6 @@ public class Lista<T> {
 		return false;
 	}
 
-	//Adicionar um elemento em determinada posiçãoa do array
 	public boolean adicionar(int posicao, T nome){
 		aumentarCapacidade();
 		if (!(posicao >= 0 && posicao < this.tamanho)) {
@@ -71,10 +66,6 @@ public class Lista<T> {
 		}
 	}
 
-	public int tamanho() {
-		return this.tamanho;
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder();
@@ -92,6 +83,5 @@ public class Lista<T> {
 		return s.toString();
 
 	}
-
 
 }
