@@ -1,5 +1,7 @@
 package com.estruturadedados.vetor.leandro;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class VetorApplication {
@@ -22,17 +24,30 @@ public class VetorApplication {
 		System.out.println("Digite o que deseja:");
 		String busca = input.nextLine();
 		
+		boolean encontrou = false;
 		for(int x = 0; x < estados.length; x++) {
-			if(busca.equals(estados[x])) {
-				System.out.println("Resultado da busca: " + estados[x]);
+			if(busca.equalsIgnoreCase(estados[x])) {
+				encontrou = true;
 				break;
-			}else{
-				System.out.println("Resultado não encontrado");
-				
 			}
+		}	
+		if(encontrou == true) {
+			System.out.println("Resultado encontrado");	
+		}else {
+			System.out.println("Não encontrou o resultado!");
 		}
 		
+		ArrayList<String> cidades = new ArrayList<>();
+		cidades.add("Recife");
+		cidades.add("Ipojuca");
+		cidades.add("Cupira");
 		
+		Iterator iterator = cidades.iterator();
+		
+		while(iterator.hasNext()) {
+			Object obj = iterator.next();
+			System.out.println(obj);
+		}
 	}
 
 }
