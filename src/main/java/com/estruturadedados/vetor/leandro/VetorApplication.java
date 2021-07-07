@@ -1,6 +1,7 @@
 package com.estruturadedados.vetor.leandro;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -48,6 +49,7 @@ public class VetorApplication {
 			Object obj = iterator.next();
 			System.out.println(obj);
 		}
+		
 	}
 
 }
